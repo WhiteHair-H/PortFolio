@@ -18,15 +18,11 @@ namespace MVCPortFolio.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
+        //public IActionResult Privacy()
+        //{
+        //    return View();
+        //}
 
         public IActionResult Home()
         {
@@ -52,10 +48,11 @@ namespace MVCPortFolio.Controllers
         {
             return View();
         }
-        public IActionResult Service()
+        public IActionResult Login()
         {
             return View();
         }
+
         public IActionResult Welcome()
         {
             return View();

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<MVCPortFolio.Models.Board>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Home/Board.cshtml";
+}
+
+
+
+<main class="site-wrapper">
+    <div class="pt-table">
+        <div class="pt-tablecell page-quotes relative">
+            <!-- .close -->
+            <a asp-area="" asp-controller="Home" asp-action="Home"
+               class="page-close"><i class="tf-ion-close"></i></a>
+            <!-- /.close -->
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-offset-1 col-md-10 col-lg-offset-2 col-lg-8">
+                        <div class="page-title text-center">
+                            <h2><span class="primary">Board</span></h2>
+                            <p>게시판을 적는 공간입니다.</p>
+                        </div>
+                    </div>
+                </div> <!-- /.row -->
+            </div> <!-- /.container -->
+            <p class="btn btn-default pull-left" style="color:black;">
+                <a asp-action="Create">글쓰기</a>
+            </p>
+            <table class="table table-bordered" style="color:white;">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Subject)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Contents)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Writer)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.RegDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ReadCount)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Subject)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Contents)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Writer)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RegDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ReadCount)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <nav class="page-nav clear">
+                <div class="container">
+                    <div class="flex flex-middle space-between">
+                        <span class="prev-page"><a asp-area="" asp-controller="Home" asp-action="Work" class="link">&larr; Prev Page</a></span>
+                        <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
+                        <span class="next-page"><a asp-area="" asp-controller="Home" asp-action="Login" class="link">Next Page &rarr;</a></span>
+                    </div>
+                </div>
+                <!-- /.page-nav -->
+            </nav>
+            <!-- /.container -->
+
+        </div> <!-- /.pt-tablecell -->
+    </div> <!-- /.pt-table -->
+</main> <!-- /.site-wrapper -->
+
+

@@ -1,12 +1,46 @@
 ﻿@*bootstrap MVC
 
-1. 부트스트랩 다운로드
-2. MVC 솔루션 만들기
-3. wwwroot에 CSS,js 등 파일 삽입
-4. controller에서 index 밑에 복붙을 통하여 뷰이름 오른쪽 클릭후 뷰 추가(강력한 뷰 클릭)
-5. Home 을 중심으로 생성할 뷰 생성
-6. Home.cshtml에서 asp-area="" asp-controller="Home" asp-action="Welcome" 추가하여 각각 페이지에 들어갈수있게 추가해주기
-7. css가 먹히지 않을 때 파일앞에 ~/ 통해서 명시해주기*@
+    7/30
+    1. 부트스트랩 다운로드
+    2. MVC 솔루션 만들기
+    3. wwwroot에 CSS,js 등 파일 삽입
+    4. controller에서 index 밑에 복붙을 통하여 뷰이름 오른쪽 클릭후 뷰 추가(강력한 뷰 클릭)
+    5. Home 을 중심으로 생성할 뷰 생성
+    6. Home.cshtml에서 asp-area="" asp-controller="Home" asp-action="Welcome" 추가하여 각각 페이지에 들어갈수있게 추가해주기
+    7. css가 먹히지 않을 때 파일앞에 ~/ 통해서 명시해주기
+    8/1
+    8. 각각 페이지에 이전, 다음페이지 asp-controller="Home" asp-action="resume" 추가하여 페이지 넘어갈수 있게 하기
+    9. MS-SQL에서 게시판 DB설계
+    10. appsetting에서 DataSource 들고기
+    11. Controllers에서 컨트롤 추가 - entityFrameWork를 통한 MVC 컨트롤 생성
+    12. X.PagedList.Mvc.Core패키지 다운로드 후 BoardController.cs - ToPagedListAsync 추가
+    13. MVCPortFolioContext.cs에서 Microsoft.AspNetCore.Identity.EntityFrameworkCore 패키지 다운로드후 public class MVCPortFolioContext : IdentityDbContext <- 추가
+    14. Cannot open database 에러 뜰시 - appsettings.json에서 Server=(localdb)\\mssqllocaldb~~~ 지우고
+    Startup.cs에서 Configuration.GetConnectionString("MVCPortFolioContext"))를 DefaultConnection로 바꿔주기
+    15. 개체이름이 유효하지않습니다 오류 - DB이름 확인하기
+    16. rendorbody 오류는 @RenderBody() 생성해주기
+    17. cshtml나오지 않을 경우 css, javascript 추가
+    18. index.cshtml에 위치 잡아주기 - @RenderBody()는 무조건 레이아웃에만 설정
+
+    todo
+    1. 아이콘, 글, 글자크기 , 사진, 이전, 다음 페이지 글자 등 디자인 요소 수정
+    2. 로그인, 문의사항 컨트롤 생성 및 DB연결작업
+    3.
+    4.
+    5.
+
+    8/1 작업
+    1. 게시판 페이지 작업 완료
+    2. 게시판과 DB 연동 작업완료 했으며 글쓰기를 눌렀을 때 데이터가 넘어오는거 확인
+    3.
+
+    8/2 해야할 작업들
+    1. 게시판 틀 찾기 (문제점 - 화면을 다 차지함)
+    2. 게시판 controller에서 조회수, 날짜 readonly로 수정
+    3. 인덱스 추가(DB = id)
+
+
+*@
 
 <!DOCTYPE html>
 <html class="no-js" lang="">
@@ -22,9 +56,7 @@
     <!-- fevicon -->
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <!-- ================================
-    CSS Files
-    ================================= -->
+    <!-- ================================ CSS Files ================================= -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
     <link rel="stylesheet" href="css/themefisher-fonts.min.css">
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -61,7 +93,6 @@
     </div>
 
     <main class="site-wrapper">
-
         <div class="pt-table">
             <div class="pt-tablecell page-home relative" style="background-image: url('img/banner.jpg');">
                 <div class="overlay"></div>
@@ -75,6 +106,7 @@
                             </div>
 
                             <div class="hexagon-menu clear">
+                                @*Welcome 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -97,6 +129,7 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
+                                @*About 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -119,28 +152,7 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
-                                <div class="hexagon-item">
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    <div class="hex-item">
-                                        <div></div>
-                                        <div></div>
-                                        <div></div>
-                                    </div>
-                                    @*Service 버튼 클릭 구간*@
-                                    <a class="hex-content" asp-area="" asp-controller="Home" asp-action="Service">
-                                        <span class="hex-content-inner">
-                                            <span class="icon">
-                                                <i class="tf-tools-2"></i>
-                                            </span>
-                                            <span class="title">Service</span>
-                                        </span>
-                                        <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
-                                    </a>
-                                </div>
+                                @*Resume 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -163,6 +175,7 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
+                                @*Work 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -185,6 +198,7 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
+                                @*Board 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -197,7 +211,7 @@
                                         <div></div>
                                     </div>
                                     @*Board 버튼 클릭 구간*@
-                                    <a class="hex-content" asp-area="" asp-controller="Home" asp-action="Board">
+                                    <a class="hex-content" asp-area="" asp-controller="Board" asp-action="Index">
                                         <span class="hex-content-inner">
                                             <span class="icon">
                                                 <i class="tf-chat"></i>
@@ -207,6 +221,30 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
+                                @*Login 메뉴*@
+                                <div class="hexagon-item">
+                                    <div class="hex-item">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <div class="hex-item">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    @*Service 버튼 클릭 구간*@
+                                    <a class="hex-content" asp-area="" asp-controller="Home" asp-action="Login">
+                                        <span class="hex-content-inner">
+                                            <span class="icon">
+                                                <i class="tf-ion-log-in"></i>
+                                            </span>
+                                            <span class="title">Login</span>
+                                        </span>
+                                        <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
+                                    </a>
+                                </div>
+                                @*Contact 메뉴*@
                                 <div class="hexagon-item">
                                     <div class="hex-item">
                                         <div></div>
@@ -229,6 +267,7 @@
                                         <svg viewbox="0 0 173.20508075688772 200" height="200" width="174" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M86.60254037844386 0L173.20508075688772 50L173.20508075688772 150L86.60254037844386 200L0 150L0 50Z" fill="#1e2530"></path></svg>
                                     </a>
                                 </div>
+
                             </div> <!-- /.hexagon-menu -->
 
                         </div> <!-- /.col-xs-12 -->
@@ -239,9 +278,7 @@
             </div> <!-- /.pt-tablecell -->
         </div> <!-- /.pt-table -->
     </main> <!-- /.site-wrapper -->
-    <!-- ================================
-    JavaScript Libraries
-    ================================= -->
+    <!-- ================================JavaScript Libraries================================= -->
     <script src="js/vendor/jquery-2.2.4.min.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <!-- <script src="js/jquery.easing.min.js"></script> -->

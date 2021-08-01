@@ -138,9 +138,10 @@
                 <nav class="page-nav clear">
                     <div class="container">
                         <div class="flex flex-middle space-between">
-                            <span class="prev-page"><a href="welcome.html" class="link">&larr; Prev Page</a></span>
+                            @*todo : 이전 페이지 , 다음페이지 컨트롤페이지 넣어주기*@
+                            <span class="prev-page"><a asp-area="" asp-controller="Home" asp-action="Welcome" class="link">&larr; Prev Page</a></span>
                             <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
-                            <span class="next-page"><a href="services.html" class="link">Next Page &rarr;</a></span>
+                            <span class="next-page"><a asp-area="" asp-controller="Home" asp-action="Resume" class="link">Next Page &rarr;</a></span>
                         </div>
                     </div>
                     <!-- /.page-nav -->
