@@ -52,6 +52,13 @@ namespace MVCPortFolio.Controllers
                 return NotFound();
             }
 
+            // Readcount 증가
+
+            board.ReadCount += 1; // 1씩 증가
+            _context.Board.Update(board); // DB board에 업데이트
+            _context.SaveChanges(); // 바뀐부분을 저장
+
+
             return View(board);
         }
 
@@ -70,6 +77,9 @@ namespace MVCPortFolio.Controllers
         {
             if (ModelState.IsValid)
             {
+                DateTime now = DateTime.Now;
+                board.RegDate = now;
+                board.ReadCount = 0;
                 _context.Add(board);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));

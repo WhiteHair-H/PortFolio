@@ -108,10 +108,12 @@ textarea, label {
   background-color: #f9423a;
 }
 
+
+
 .btn-border {
-  border: 1px solid #d7d8db;
-  display: inline-block;
-  padding: 7px;
+    border: 1px solid #d7d8db;
+    display: inline-block;
+    padding: 7px;
 }
 
 /*
@@ -154,6 +156,7 @@ textarea, label {
 .link:hover {
   color: #FA6862;
 }
+
 
 .no-gutter {
   margin-left: 0;
@@ -1593,3 +1596,4 @@ textarea, label {
     margin-right: 0;
   }
 }
+
