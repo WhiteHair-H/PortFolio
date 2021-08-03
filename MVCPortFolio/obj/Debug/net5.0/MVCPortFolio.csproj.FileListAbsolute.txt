@@ -165,3 +165,4 @@ D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\Microsoft.Extensions.Id
 D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\X.PagedList.dll
 D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
 D:\GitRepository\PortFolio\MVCPortFolio\obj\Debug\net5.0\MVCPortFolio.MvcApplicationPartsAssemblyInfo.cs
+D:\GitRepository\PortFolio\MVCPortFolio\obj\Debug\net5.0\Razor\Views\Contact\Index.cshtml.g.cs

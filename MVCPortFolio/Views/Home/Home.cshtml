@@ -24,17 +24,18 @@
     8/2
     19. 게시판 controller에서 조회수, 날짜 readonly로 수정
     20. 인덱스 추가(DB = id)
+    21. Context-index : IEnumerable 오류 뜰시 맨위 IEnumerable 제거후 asp-for 입력
 
     todo
     1. 아이콘, 글, 글자크기 , 사진, 이전, 다음 페이지 글자 등 디자인 요소 수정
     2. 로그인, 문의사항 컨트롤 생성 및 DB연결작업
-    3. 
+    3. 각 페이지 타이틀 수정
     4.
     5.
 
     8/3 해야할 작업들
     1. 문의사항 컨트롤 창 만들기
-    2. 
+    2.
 
 *@
 
@@ -253,7 +254,7 @@
                                         <div></div>
                                     </div>
                                     @*Contact 버튼 클릭 구간*@
-                                    <a class="hex-content" asp-area="" asp-controller="Home" asp-action="Contact">
+                                    <a class="hex-content" asp-area="" asp-controller="Contact" asp-action="Index">
                                         <span class="hex-content-inner">
                                             <span class="icon">
                                                 <i class="tf-envelope2"></i>

@@ -11,12 +11,17 @@ namespace MVCPortFolio.Models
         [Key]
         public int Id { get; set; }
 
+        [DataType(DataType.Text)]
+        [StringLength(50)]
         public string Name { get; set; }
 
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
+        [DataType(DataType.Text)]
         public string Contents { get; set; }
 
+        [DataType(DataType.DateTime)]
         public DateTime Regdate { get; set; }
     }
 }
