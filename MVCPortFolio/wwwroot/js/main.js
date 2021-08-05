@@ -32,7 +32,7 @@
 	
 	animatedProgressBar();
 	windowHieght();
-	contactFormValidation();
+	/*contactFormValidation();*/
 	previewPannel();
 
 	function animatedProgressBar () {

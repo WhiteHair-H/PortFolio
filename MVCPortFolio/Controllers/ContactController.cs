@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using MVCPortFolio.Data;
 using MVCPortFolio.Models;
 
@@ -17,9 +13,11 @@ namespace MVCPortFolio.Controllers
         public ContactController(MVCPortFolioContext context)
         {
             _context = context;
+            
         }
 
         // GET: Contact
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             return View();
@@ -36,11 +34,15 @@ namespace MVCPortFolio.Controllers
                     contact.Regdate = DateTime.Now;
                     _context.Add(contact);
                     await _context.SaveChangesAsync();
+                    
 
+
+                    ViewBag.Message = "감사합니다. 연락드리겠습니다.";
                     ModelState.Clear();
                 }
                 catch (Exception ex)
                 {
+                    ViewBag.Message = $"예외가 발생했습니다. {ex.InnerException}";
                     ModelState.Clear();
                 }
                 //return RedirectToAction(nameof(Index));

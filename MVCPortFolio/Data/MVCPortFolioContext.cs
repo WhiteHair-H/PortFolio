@@ -18,5 +18,8 @@ namespace MVCPortFolio.Data
         public DbSet<Board> Board { get; set; }
 
         public DbSet<Contact> Contact { get; set; }
+
+        public DbSet<Account> Account { get; set; }
+
     }
 }
