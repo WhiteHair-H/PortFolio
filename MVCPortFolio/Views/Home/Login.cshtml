@@ -16,12 +16,12 @@
     CSS Files
     ================================= -->
     <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i|Open+Sans:400,600,700,800" rel="stylesheet">
-    <link rel="stylesheet" href="css/themefisher-fonts.min.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/dark.css">
-    <link id="color-changer" rel="stylesheet" href="css/colors/color-0.css">
+    <link rel="stylesheet" href="~/css/themefisher-fonts.min.css">
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/main.css">
+    <link rel="stylesheet" href="~/css/dark.css">
+    <link id="color-changer" rel="stylesheet" href="~/css/colors/color-0.css">
 </head>
 
 <body class="dark">
@@ -34,58 +34,18 @@
         <div class="loading-mask"></div>
     </div>
 
-    <section class="site-wrapper">
-        <div class="pt-table">
-
-            <div class="pt-tablecell page-services relative">
-                <a href="./" class="page-close"><i class="tf-ion-close"></i></a>
-                <div class="container">
-                    <div class="col-xs-12 col-lg-offset-1 col-lg-10">
-                        <div class="page-title text-center">
-                            <h2>Awesome <span class="primary">Services</span></h2>
-                            <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica,quam nunc putamus parum claram anteposuerit.</p>
-                        </div>
-
-                        <div class="wrapper">
-                            <form class="form-signin">
-                                <h2 class="form-signin-heading">Login</h2>
-                                <input type="email" class="form-control" name="username" placeholder="Email Address" required="" autofocus="" />
-                                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
-                                <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-                            </form>
-                        </div>
-                    </div> <!-- /.col-xs-12 -->
-
-                </div> <!-- /.container -->
-
-
-                <nav class="page-nav clear">
-                    <div class="container">
-                        <div class="flex flex-middle space-between">
-                            @*todo : 이전 페이지 , 다음페이지 컨트롤페이지 넣어주기*@
-                            <span class="prev-page"><a asp-area="" asp-controller="Board" asp-action="Index" class="link">&larr; BOARD Page</a></span>
-                            <span class="copyright hidden-xs">Copyright &copy; 2016 Phantom, All Rights Reserved.</span>
-                            <span class="next-page"><a asp-area="" asp-controller="Contact" asp-action="Index" class="link">CONTACT Page &rarr;</a></span>
-                        </div>
-                    </div>
-                    <!-- /.page-nav -->
-                </nav>
-                <!-- /.container -->
-
-            </div> <!-- /.pt-tablecell -->
-        </div> <!-- /.pt-table -->
-    </section> <!-- /.site-wrapper -->
+    @RenderBody()
     <!-- ================================
     JavaScript Libraries
     ================================= -->
-    <script src="js/vendor/jquery-2.2.4.min.js"></script>
-    <script src="js/vendor/bootstrap.min.js"></script>
-    <script src="js/jquery.easing.min.js"></script>
-    <script src="js/isotope.pkgd.min.js"></script>
-    <script src="js/jquery.nicescroll.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery-validation.min.js"></script>
-    <script src="js/form.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="~/js/vendor/jquery-2.2.4.min.js"></script>
+    <script src="~/js/vendor/bootstrap.min.js"></script>
+    <script src="~/js/jquery.easing.min.js"></script>
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <script src="~/js/jquery.nicescroll.min.js"></script>
+    <script src="~/js/owl.carousel.min.js"></script>
+    <script src="~/js/jquery-validation.min.js"></script>
+    <script src="~/js/form.min.js"></script>
+    <script src="~/js/main.js"></script>
 </body>
 </html>

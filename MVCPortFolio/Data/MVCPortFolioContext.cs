@@ -21,5 +21,7 @@ namespace MVCPortFolio.Data
 
         public DbSet<Account> Account { get; set; }
 
+        public DbSet<User> User { get; set; }
+
     }
 }

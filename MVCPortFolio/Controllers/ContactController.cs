@@ -32,8 +32,8 @@ namespace MVCPortFolio.Controllers
                 try
                 {
                     contact.Regdate = DateTime.Now;
-                    _context.Add(contact);
-                    await _context.SaveChangesAsync();
+                    _context.Add(contact); // 메모리상에 데이터가 올라감
+                    await _context.SaveChangesAsync(); // DB저장 , 커밋
                     
 
 

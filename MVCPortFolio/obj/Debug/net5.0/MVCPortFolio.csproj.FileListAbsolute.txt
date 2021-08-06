@@ -449,3 +449,5 @@ D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\refs\WindowsBase.dll
 D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 D:\GitRepository\PortFolio\MVCPortFolio\bin\Debug\net5.0\Microsoft.Extensions.DependencyModel.dll
+D:\GitRepository\PortFolio\MVCPortFolio\obj\Debug\net5.0\Razor\Views\Account\Login.cshtml.g.cs
+D:\GitRepository\PortFolio\MVCPortFolio\obj\Debug\net5.0\Razor\Views\Account\User.cshtml.g.cs
